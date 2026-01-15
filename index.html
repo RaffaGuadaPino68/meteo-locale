@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meteo Locale Preciso</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+  />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1e90ff">
+</head>
+
+<body>
+
+  <div class="app">
+    <h1>🌡️ Meteo Locale</h1>
+
+    <input id="cityInput" placeholder="Es. Rovegno Liguria" />
+    <button onclick="searchCity()">Cerca</button>
+
+    <button
+      id="saveBtn"
+      onclick="saveCurrent()"
+      style="display:none;"
+    >
+      ⭐ Salva località
+    </button>
+
+    <span
+      id="saveMsg"
+      style="display:none; margin-left:8px; color:green;"
+    >
+      Salvato ✔️
+    </span>
+
+    <div id="favorites">
+      <h3>Località salvate</h3>
+      <ul id="favList"></ul>
+    </div>
+
+    <div id="tempBox">
+      <div id="temp"></div>
+      <div id="details"></div>
+    </div>
+
+    <div id="map"></div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+
+  <!-- Service Worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
+  </script>
+
+</body>
+</html>
+

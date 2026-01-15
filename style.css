@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #0b1d2a;
+  color: white;
+}
+
+.app {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
+}
+
+input, button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+button {
+  background: #1e90ff;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#tempBox {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+#temp {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+#map {
+  height: 400px;
+  border-radius: 10px;
+}
+
+#favorites {
+  margin-top: 1rem;
+}
+
+#favList {
+  list-style: none;
+  padding: 0;
+}
+
+#favList li {
+  padding: 0.6rem;
+  margin-bottom: 0.4rem;
+  background: #1c2f3f;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#favList li:hover {
+  background: #29465c;
+}
+
+/* ===== FIX CESTINO LOCALITÀ SALVATE ===== */
+
+#favList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#favList .fav-delete {
+  width: auto !important;
+  padding: 2px 6px !important;
+  margin: 0 !important;
+
+  background: transparent !important;
+  border: none !important;
+
+  font-size: 14px !important;
+  color: #ff6b6b !important;
+
+  cursor: pointer;
+}
+
+#favList .fav-delete:hover {
+  color: #ff3b3b !important;
+  transform: scale(1.15);
+}
+
+#favList li.active {
+  background: #1e90ff;
+  color: white;
+}
+
+#favList li.active:hover {
+  background: #1e90ff;
+}
